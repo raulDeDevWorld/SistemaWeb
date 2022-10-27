@@ -1,0 +1,24 @@
+.header {
+    position: absolute;
+    top: 0;
+    height: 65px;
+    width: 100%;
+    padding: 5px 20px;
+    color:  #f2f2f2;
+    background-color: #294B98;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    border-bottom: 10px solid #F1BA06;
+  }
+  
+  .header :nth-child(2) {
+    width: 100px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
