@@ -226,6 +226,7 @@ console.log(data)
                         <input type="text" />
                         <input type="text" />
                     </div>
+                    <br />
                     <div className={style.subtitle}>OTROS GASTOS</div>
                     <br />
                     <div className={`${style.items} ${style.mobil}`}>
