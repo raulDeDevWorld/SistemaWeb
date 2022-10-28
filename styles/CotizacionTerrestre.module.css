@@ -43,6 +43,11 @@
     border-right: 1px solid #294B98;
     border-bottom: 1px solid #294B98;
 }
+.form div select {
+    border: none;
+    border-right: 1px solid #294B98;
+    border-bottom: 1px solid #294B98;
+}
 
 .imgForm {
     display: flex;
@@ -65,6 +70,9 @@
     justify-content: space-between;
 }
 
+.items div :nth-child(n){
+    width: 100%;
+}
 .containerFirstItems {
     width: 100%;
     display: flex;
