@@ -112,6 +112,9 @@
 }
 
 @media (max-width: 750px) {
+    .form div input {
+        border: 1px solid #294B98;
+    }
     .imgForm {
         display: flex;
         justify-content: center;
@@ -125,7 +128,7 @@
     .items div {
         flex-direction: column;
     }
-
+ 
     .containerFirstItems {
         flex-direction: column;
     }
