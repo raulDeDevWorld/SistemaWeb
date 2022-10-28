@@ -17,7 +17,7 @@ function CotizacionTerrestre() {
             <div className={style.container}>
                 <form className={style.form}>
                     <div className={style.subtitle}>COTIZACIÓN TRANSPORTE TERRESTRE</div>
-                   
+
                     <div className={style.containerFirstItems}>
                         <div className={style.imgForm}>
                             <Image src="/logo.svg" width="250" height="150" alt="User" />
@@ -135,37 +135,80 @@ function CotizacionTerrestre() {
                     <br />
                     <div className={style.subtitle}>TARIFA</div>
                     <br />
-                    <div className={style.containerFirstItems}>
+
+
+
+                    <div className={`${style.items} ${style.mobil}`}>
+                                                <div>
+                            <label htmlFor="">DETALLE</label>
+                            <input type="text" />
+                        </div>
+                        <div>
+                            <label htmlFor="">FLETE UNITARIO</label>
+                            <input type="text" />
+                        </div>
+                        <div>
+                            <label htmlFor="">CANTIDAD</label>
+                            <input type="text" />
+                        </div>
+                        <div>
+                            <label htmlFor="">FLETE TOTAL</label>
+                            <input type="text" />
+                        </div>
+                    </div>
+
+
+                    <div className={`${style.containerFirstItems} ${style.desktop}`}>
                         <span>DETALLE</span>
                         <span>FLETE UNITARIO</span>
                         <span>CANTIDAD</span>
                         <span>FLETE TOTAL</span>
                     </div>
-                    <div className={style.inputs}>
+                    <div className={`${style.inputs} ${style.desktop}`}>
                         <input type="text" />
                         <input type="text" />
                         <input type="text" />
                         <input type="text" />
                     </div>
-                    <br />
                     <div className={style.subtitle}>OTROS GASTOS</div>
                     <br />
-                    <div className={style.containerFirstItems}>
+                    <div className={`${style.items} ${style.mobil}`}>
+                                                <div>
+                            <label htmlFor="">DETALLE</label>
+                            <input type="text" />
+                        </div>
+                        <div>
+                            <label htmlFor="">FLETE UNITARIO</label>
+                            <input type="text" />
+                        </div>
+                        <div>
+                            <label htmlFor="">CANTIDAD</label>
+                            <input type="text" />
+                        </div>
+                        <div>
+                            <label htmlFor="">FLETE TOTAL</label>
+                            <input type="text" />
+                        </div>
+                    </div>
+
+                    <div className={`${style.containerFirstItems} ${style.desktop}`}>
                         <span>DETALLE</span>
                         <span>FLETE UNITARIO</span>
                         <span>CANTIDAD</span>
                         <span>FLETE TOTAL</span>
                     </div>
-                    <div className={style.inputs}>
+                    <div className={`${style.inputs} ${style.desktop}`}>
                         <input type="text" />
                         <input type="text" />
                         <input type="text" />
                         <input type="text" />
                     </div>
+                    <br />
+                    
                 </form>
             </div>
             <br />
-                <br />
+            <br />
         </Layout>
     )
 }
