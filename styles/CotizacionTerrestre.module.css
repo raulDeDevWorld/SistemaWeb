@@ -1,0 +1,120 @@
+.container {
+    padding: 10px;
+    padding-top: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    max-width: 794px;
+}
+
+.flex span {
+    width: 100%;
+    text-align: center;
+}
+
+.form > div {
+    background-color: #294B98;
+    color: #f2f2f2;
+}
+.form > :nth-child(2) {
+    background-color: #ffffff;
+    color: #38569c;
+    border: none;
+}
+
+.form span {
+    background-color: #294B98;
+    color: #f2f2f2;
+    text-align: center;
+    border: 1px solid #294B98;
+}
+
+.form label {
+    padding-left: 10px;
+}
+
+.form div input {
+    border: none;
+    border-right: 1px solid #294B98;
+    border-bottom: 1px solid #294B98;
+}
+
+.imgForm {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.subtitle {
+    text-align: center;
+}
+
+.items {
+    border-top: 1px solid #294B98;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.items div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.containerFirstItems {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    background-color: #f2f2f2;
+    color: #38569c;
+    border: 1px solid #294B98;
+}
+.containerFirstItems :nth-child(n) {
+    width: 100%;
+}
+.inputs > :nth-child(1) {
+    border-left: 1px solid #294B98;
+}
+  
+.firstItems {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+}
+.firstItems :nth-child(1) {
+    border-top: 1px solid #294B98;
+}
+.firstItems div {
+    background-color: #294B98;
+    color: #f2f2f2;
+}
+.firstItems div {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 750px) {
+    .imgForm {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .items {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .items div {
+        flex-direction: column;
+    }
+    .containerFirstItems {
+        flex-direction: column;
+    }
+    .firstItems div {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
