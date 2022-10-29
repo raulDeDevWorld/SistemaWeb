@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useReducer, useState } from 'react'
 import { useUser } from '../context/Context'
 import { WithAuth } from '../HOCs/WithAuth'
 import Layout from '../layout/Layout'
@@ -13,13 +13,18 @@ function CotizacionTerrestre() {
     const router = useRouter()
 
     const [data, setData] = useState({})
+    const [tarifa, setTarifa] = useState(1)
 
 
-    function handleEventChange (e) {
-        setData({...data, ...{[e.target.name]: e.target.value}})
+
+    function handleEventChange(e) {
+        setData({ ...data, ...{ [e.target.name]: e.target.value } })
+    }
+    function handlerCounter(word) {
+        word == "pluss" ? setTarifa(tarifa + 1): setTarifa(tarifa - 1)
     }
 
-console.log(data)
+    console.log(tarifa)
     return (
         <Layout>
             <div className={style.container}>
@@ -33,15 +38,15 @@ console.log(data)
                         <div className={style.firstItems}>
                             <div>
                                 <label htmlFor="">COTIZACIÓN No</label>
-                                <input type="text" name={"COTIZACIÓN No"} onChange={handleEventChange}/>
+                                <input type="text" name={"COTIZACIÓN No"} onChange={handleEventChange} />
                             </div>
                             <div>
                                 <label htmlFor="">FECHA</label>
-                                <input type="text" name={"FECHA"} onChange={handleEventChange}/>
+                                <input type="text" name={"FECHA"} onChange={handleEventChange} />
                             </div>
                             <div>
                                 <label htmlFor="">VALIDEZ</label>
-                                <input type="text" name={"VALIDEZ"} onChange={handleEventChange}/>
+                                <input type="text" name={"VALIDEZ"} onChange={handleEventChange} />
                             </div>
                         </div>
                     </div>
@@ -51,27 +56,27 @@ console.log(data)
                     <div className={style.items}>
                         <div>
                             <label htmlFor="">NOMBRE</label>
-                            <input type="text" name={"NOMBRE"} onChange={handleEventChange}/>
+                            <input type="text" name={"NOMBRE"} onChange={handleEventChange} />
                         </div>
                         <div>
                             <label htmlFor="">EMPRESA</label>
-                            <input type="text" name={"EMPRESA"} onChange={handleEventChange}/>
+                            <input type="text" name={"EMPRESA"} onChange={handleEventChange} />
                         </div>
                         <div>
                             <label htmlFor="">CARGO</label>
-                            <input type="text" name={"CARGO"} onChange={handleEventChange}/>
+                            <input type="text" name={"CARGO"} onChange={handleEventChange} />
                         </div>
                         <div>
                             <label htmlFor="">CORREO</label>
-                            <input type="text" name={"CORREO"} onChange={handleEventChange}/>
+                            <input type="text" name={"CORREO"} onChange={handleEventChange} />
                         </div>
                         <div>
                             <label htmlFor="">TELEFONO</label>
-                            <input type="text" name={"TELEFONO"} onChange={handleEventChange}/>
+                            <input type="text" name={"TELEFONO"} onChange={handleEventChange} />
                         </div>
                         <div>
                             <label htmlFor="">CIUDAD</label>
-                            <input type="text" name={"CIUDAD"} onChange={handleEventChange}/>
+                            <input type="text" name={"CIUDAD"} onChange={handleEventChange} />
                         </div>
                     </div>
                     <br />
@@ -80,7 +85,7 @@ console.log(data)
                     <div className={style.items}>
                         <div>
                             <label htmlFor="">MERCANCIA</label>
-                            <input type="text" name={"VALIDEZ"} onChange={handleEventChange}/>
+                            <input type="text" name={"VALIDEZ"} onChange={handleEventChange} />
                         </div>
                         <div>
                             <label htmlFor="">EMPAQUE</label>
@@ -95,11 +100,11 @@ console.log(data)
                                 <option value="40`STD">40`STD</option>
                                 <option value="40`HQ">40`HQ</option>
                             </select>
-                            
+
                         </div>
                         <div>
                             <label htmlFor="">*PESO TN</label>
-                            <input type="text" name={"PESO TN"} onChange={handleEventChange}/>
+                            <input type="text" name={"PESO TN"} onChange={handleEventChange} />
                         </div>
                         <div>
                             <label htmlFor="">INCOTERM</label>
@@ -123,15 +128,15 @@ console.log(data)
                                 <option value="ESPECIAL">ESPECIAL</option>
                                 <option value="REFRIGERADA">REFRIGERADA</option>
                                 <option value="PROYECTO">PROYECTO</option>
-                            </select>                        
-                         </div>
+                            </select>
+                        </div>
                         <div>
                             <label htmlFor="">*VOLUMEN M3</label>
-                            <input type="text" name={"VOLUMEN M3"} onChange={handleEventChange}/>
+                            <input type="text" name={"VOLUMEN M3"} onChange={handleEventChange} />
                         </div>
                         <div>
                             <label htmlFor="">*CANTIDAD</label>
-                            <input type="text" name={"CANTIDAD"} onChange={handleEventChange}/>
+                            <input type="text" name={"CANTIDAD"} onChange={handleEventChange} />
                         </div>
                         <div>
                             <label htmlFor="">MODALIDAD</label>
@@ -141,8 +146,8 @@ console.log(data)
                                 <option value="LTL">LTL</option>
                                 <option value="CARGA SUELTA">CARGA SUELTA</option>
                                 <option value="DESCONSOLIDADO">DESCONSOLIDADO</option>
-                            </select>                         
-                            </div>
+                            </select>
+                        </div>
                     </div>
                     <br />
                     <div className={style.subtitle}>DETALLES DEL SERVICIO</div>
@@ -155,15 +160,15 @@ console.log(data)
                                 <option value="NACIONAL">NACIONAL</option>
                                 <option value="INTERNACIONAL">INTERNACIONAL</option>
                                 <option value="URBANO">URBANO</option>
-                            </select>    
+                            </select>
                         </div>
                         <div>
                             <label htmlFor="">*ORIGEN</label>
-                            <input type="text" name={"ORIGEN"} onChange={handleEventChange}/>
+                            <input type="text" name={"ORIGEN"} onChange={handleEventChange} />
                         </div>
                         <div>
                             <label htmlFor="">*CANTIDAD</label>
-                            <input type="text" name={"CANTIDAD"} onChange={handleEventChange}/>
+                            <input type="text" name={"CANTIDAD"} onChange={handleEventChange} />
                         </div>
                         <div>
                             <label htmlFor="">*TIPO DE UNIDAD</label>
@@ -177,25 +182,23 @@ console.log(data)
                                 <option value="FURGON CARGA SECA">FURGON CARGA SECA</option>
                                 <option value="FURGON CARGA REFRIGERADA">FURGON CARGA REFRIGERADA</option>
                                 <option value="PORTA CONTENEDORES">PORTA CONTENEDORES</option>
-                            </select>                         
-                            </div>
+                            </select>
+                        </div>
                         <div>
                             <label htmlFor="">*DESTINO</label>
-                            <input type="text" name={"DESTINO"} onChange={handleEventChange}/>
+                            <input type="text" name={"DESTINO"} onChange={handleEventChange} />
                         </div>
                         <div>
                             <label htmlFor="">*MONEDA</label>
-                            <input type="text" name={"MONEDA"} onChange={handleEventChange}/>
+                            <input type="text" name={"MONEDA"} onChange={handleEventChange} />
                         </div>
                     </div>
                     <br />
-                    <div className={style.subtitle}>TARIFA</div>
+                    <div className={style.subtitle}>TARIFA <span className={style.counterPluss} onClick={()=>handlerCounter('pluss')}>+</span> <span className={style.counterLess} onClick={()=>handlerCounter('less')}>-</span></div>
                     <br />
-
-
-
+                   
                     <div className={`${style.items} ${style.mobil}`}>
-                                                <div>
+                        <div>
                             <label htmlFor="">DETALLE</label>
                             <input type="text" />
                         </div>
@@ -212,8 +215,6 @@ console.log(data)
                             <input type="text" />
                         </div>
                     </div>
-
-
                     <div className={`${style.containerFirstItems} ${style.desktop}`}>
                         <span>DETALLE</span>
                         <span>FLETE UNITARIO</span>
@@ -230,7 +231,7 @@ console.log(data)
                     <div className={style.subtitle}>OTROS GASTOS</div>
                     <br />
                     <div className={`${style.items} ${style.mobil}`}>
-                                                <div>
+                        <div>
                             <label htmlFor="">DETALLE</label>
                             <input type="text" />
                         </div>
@@ -264,7 +265,7 @@ console.log(data)
                 </form>
             </div>
 
-            
+
             <br />
             <br />
         </Layout>
