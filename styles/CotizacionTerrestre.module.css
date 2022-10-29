@@ -81,7 +81,6 @@
 
     background-color: #f2f2f2;
     color: #38569c;
-    border: 1px solid #294B98;
 }
 
 .containerFirstItems :nth-child(n) {
@@ -90,9 +89,8 @@
 .inputs {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-}
-.inputs > :nth-child(1) {
-    border-right: 1px solid #294B98;
+  border-right: 1px solid #294B98;
+
 }
 
 .firstItems {
