@@ -1,5 +1,5 @@
 .header {
-    position: absolute;
+    position: fixed;
     top: 0;
     height: 65px;
     width: 100%;
@@ -12,6 +12,7 @@
     align-items: center;
     
     border-bottom: 10px solid #F1BA06;
+    z-index: 10000;
   }
   
   .header :nth-child(2) {

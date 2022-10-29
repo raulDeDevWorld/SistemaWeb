@@ -5,15 +5,22 @@ import { useUser } from '../context/Context'
 import { WithAuth } from '../HOCs/WithAuth'
 import Layout from '../layout/Layout'
 import Card from '../components/Card'
+import ReactPDF from '@react-pdf/renderer';
+
+import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+
 
 import style from '../styles/CotizacionTerrestre.module.css'
+import Button from '../components/Button'
+
 
 function CotizacionTerrestre() {
     const { user } = useUser()
     const router = useRouter()
 
     const [data, setData] = useState({})
-    const [tarifa, setTarifa] = useState(1)
+    const [tarifa, setTarifa] = useState([""])
+    const [otrosGastos, setOtrosGastos] = useState([""])
 
 
 
@@ -21,7 +28,14 @@ function CotizacionTerrestre() {
         setData({ ...data, ...{ [e.target.name]: e.target.value } })
     }
     function handlerCounter(word) {
-        word == "pluss" ? setTarifa(tarifa + 1): setTarifa(tarifa - 1)
+        const newTarifa = tarifa.map(i=>i)
+        newTarifa.pop()
+        word == "pluss" ? setTarifa([...tarifa, ...[""]]) : setTarifa(newTarifa)
+    }
+    function handlerCounterTwo(word) {
+        const newTarifa = otrosGastos.map(i=>i)
+        newTarifa.pop()
+        word == "pluss" ? setOtrosGastos([...otrosGastos, ...[""]]) : setOtrosGastos(newTarifa)
     }
 
     console.log(tarifa)
@@ -194,78 +208,96 @@ function CotizacionTerrestre() {
                         </div>
                     </div>
                     <br />
-                    <div className={style.subtitle}>TARIFA <span className={style.counterPluss} onClick={()=>handlerCounter('pluss')}>+</span> <span className={style.counterLess} onClick={()=>handlerCounter('less')}>-</span></div>
+                    <div className={style.subtitle}>TARIFA <span className={style.counterPluss} onClick={() => handlerCounter('pluss')}>+</span> <span className={style.counterLess} onClick={() => handlerCounter('less')}>-</span></div>
                     <br />
-                   
-                    <div className={`${style.items} ${style.mobil}`}>
-                        <div>
-                            <label htmlFor="">DETALLE</label>
-                            <input type="text" />
-                        </div>
-                        <div>
-                            <label htmlFor="">FLETE UNITARIO</label>
-                            <input type="text" />
-                        </div>
-                        <div>
-                            <label htmlFor="">CANTIDAD</label>
-                            <input type="text" />
-                        </div>
-                        <div>
-                            <label htmlFor="">FLETE TOTAL</label>
-                            <input type="text" />
-                        </div>
-                    </div>
                     <div className={`${style.containerFirstItems} ${style.desktop}`}>
                         <span>DETALLE</span>
                         <span>FLETE UNITARIO</span>
                         <span>CANTIDAD</span>
                         <span>FLETE TOTAL</span>
                     </div>
-                    <div className={`${style.inputs} ${style.desktop}`}>
-                        <input type="text" />
-                        <input type="text" />
-                        <input type="text" />
-                        <input type="text" />
-                    </div>
-                    <br />
-                    <div className={style.subtitle}>OTROS GASTOS</div>
-                    <br />
-                    <div className={`${style.items} ${style.mobil}`}>
-                        <div>
-                            <label htmlFor="">DETALLE</label>
-                            <input type="text" />
-                        </div>
-                        <div>
-                            <label htmlFor="">FLETE UNITARIO</label>
-                            <input type="text" />
-                        </div>
-                        <div>
-                            <label htmlFor="">CANTIDAD</label>
-                            <input type="text" />
-                        </div>
-                        <div>
-                            <label htmlFor="">FLETE TOTAL</label>
-                            <input type="text" />
-                        </div>
-                    </div>
+                    {
+                        tarifa.map((i, index) => {
+                            return (
+                                <>
+                                    <div className={`${style.items} ${style.mobil}`}>
+                                        <div>
+                                            <label htmlFor="">DETALLE</label>
+                                            <input type="text" />
+                                        </div>
+                                        <div>
+                                            <label htmlFor="">FLETE UNITARIO</label>
+                                            <input type="text" />
+                                        </div>
+                                        <div>
+                                            <label htmlFor="">CANTIDAD</label>
+                                            <input type="text" />
+                                        </div>
+                                        <div>
+                                            <label htmlFor="">FLETE TOTAL</label>
+                                            <input type="text" />
+                                        </div>
+                                    </div>
+                                    <div className={`${style.inputs} ${style.desktop}`}>
+                                        <input type="text" />
+                                        <input type="text" />
+                                        <input type="text" />
+                                        <input type="text" />
+                                    </div>
+                                </>
+                            )
+                        })
+                    }
 
+                    <br />
+                    <div className={style.subtitle}>OTROS GASTOS <span className={style.counterPluss} onClick={() => handlerCounterTwo('pluss')}>+</span> <span className={style.counterLess} onClick={() => handlerCounterTwo('less')}>-</span></div>
+                    <br />
                     <div className={`${style.containerFirstItems} ${style.desktop}`}>
                         <span>DETALLE</span>
                         <span>FLETE UNITARIO</span>
                         <span>CANTIDAD</span>
                         <span>FLETE TOTAL</span>
                     </div>
-                    <div className={`${style.inputs} ${style.desktop}`}>
-                        <input type="text" />
-                        <input type="text" />
-                        <input type="text" />
-                        <input type="text" />
-                    </div>
+                    {
+                        otrosGastos.map((i, index) => {
+                            return (
+                                <>
+                                    <div className={`${style.items} ${style.mobil}`}>
+                                        <div>
+                                            <label htmlFor="">DETALLE</label>
+                                            <input type="text" />
+                                        </div>
+                                        <div>
+                                            <label htmlFor="">FLETE UNITARIO</label>
+                                            <input type="text" />
+                                        </div>
+                                        <div>
+                                            <label htmlFor="">CANTIDAD</label>
+                                            <input type="text" />
+                                        </div>
+                                        <div>
+                                            <label htmlFor="">FLETE TOTAL</label>
+                                            <input type="text" />
+                                        </div>
+                                    </div>
+                                    <div className={`${style.inputs} ${style.desktop}`}>
+                                        <input type="text" />
+                                        <input type="text" />
+                                        <input type="text" />
+                                        <input type="text" />
+                                    </div>
+                                </>
+                            )
+                        })
+                    }
+
+                    
                     <br />
                 </form>
             </div>
-
-
+            <button className={style.downloadPDF}>
+                <Image src="/download-pdf.svg" width="50" height="50" alt="User" />
+            </button>
             <br />
             <br />
         </Layout>

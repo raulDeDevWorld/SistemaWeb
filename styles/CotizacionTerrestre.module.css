@@ -134,6 +134,15 @@
     display: none;
 }
 
+.downloadPDF {
+    padding: 15px;
+    background-color: #294B98;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    border-radius: 10px;
+}
+
 @media (max-width: 750px) {
     .form div input {
         border: 1px solid #294B98;
