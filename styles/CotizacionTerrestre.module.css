@@ -5,7 +5,6 @@
     justify-content: center;
     align-items: center;
     background-color: #ffffff;
-
 }
 
 .form {
@@ -173,6 +172,28 @@
 }
 
 @media (max-width: 750px) {
+    .subtitle {
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .form label {
+        height: 30px;
+        display: flex;
+        align-items: center;
+    }
+
+    .form input {
+        height: 30px;
+    }
+    .form select {
+        height: 30px;
+    }
+    .form option {
+        height: 30px;
+    }
+
     .form div input {
         border: 1px solid #294B98;
     }
@@ -198,7 +219,13 @@
         display: flex;
         flex-direction: column;
     }
-
+    .inputsSemi {
+        width: 100%;
+    }
+    .form .inputsSemi input{
+        border: 1px solid orange;
+        background-color: #ffffff;
+    }
     .mobil {
         display: block;
     }

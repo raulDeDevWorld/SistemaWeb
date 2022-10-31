@@ -64,8 +64,6 @@ function getData(setUserData) {
   onValue(ref(db, 'users/'), (snapshot) => {
     if (snapshot.exists()) {
           setUserData(snapshot.val());
-        } else {
-          setUserData('');
         }
   });
 }

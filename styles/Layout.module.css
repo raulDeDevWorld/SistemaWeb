@@ -43,7 +43,7 @@
   min-height: 100vh;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
   .home {
     display: flex;
     justify-content: center;
