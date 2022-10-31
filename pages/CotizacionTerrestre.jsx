@@ -21,6 +21,8 @@ function CotizacionTerrestre() {
     const [data, setData] = useState({})
     const [tarifa, setTarifa] = useState([""])
     const [otrosGastos, setOtrosGastos] = useState([""])
+    const [incluye, setIncluye] = useState([""])
+
 
 
 
@@ -28,23 +30,26 @@ function CotizacionTerrestre() {
         setData({ ...data, ...{ [e.target.name]: e.target.value } })
     }
     function handlerCounter(word) {
-        const newTarifa = tarifa.map(i=>i)
+        const newTarifa = tarifa.map(i => i)
         newTarifa.pop()
         word == "pluss" ? setTarifa([...tarifa, ...[""]]) : setTarifa(newTarifa)
     }
     function handlerCounterTwo(word) {
-        const newTarifa = otrosGastos.map(i=>i)
+        const newTarifa = otrosGastos.map(i => i)
         newTarifa.pop()
         word == "pluss" ? setOtrosGastos([...otrosGastos, ...[""]]) : setOtrosGastos(newTarifa)
     }
-
+    function handlerCounterThree(word) {
+        const newIncluye = incluye.map(i => i)
+        newIncluye.pop()
+        word == "pluss" ? setIncluye([...incluye, ...[""]]) : setIncluye(newIncluye)
+    }
     console.log(tarifa)
     return (
         <Layout>
             <div className={style.container}>
                 <form className={style.form}>
                     <div className={style.subtitle}>COTIZACIÓN TRANSPORTE TERRESTRE</div>
-
                     <div className={style.containerFirstItems}>
                         <div className={style.imgForm}>
                             <Image src="/logo.svg" width="250" height="150" alt="User" />
@@ -73,21 +78,22 @@ function CotizacionTerrestre() {
                             <input type="text" name={"NOMBRE"} onChange={handleEventChange} />
                         </div>
                         <div>
-                            <label htmlFor="">EMPRESA</label>
-                            <input type="text" name={"EMPRESA"} onChange={handleEventChange} />
-                        </div>
-                        <div>
-                            <label htmlFor="">CARGO</label>
-                            <input type="text" name={"CARGO"} onChange={handleEventChange} />
-                        </div>
-                        <div>
                             <label htmlFor="">CORREO</label>
                             <input type="text" name={"CORREO"} onChange={handleEventChange} />
+                        </div>
+                        <div>
+                            <label htmlFor="">EMPRESA</label>
+                            <input type="text" name={"EMPRESA"} onChange={handleEventChange} />
                         </div>
                         <div>
                             <label htmlFor="">TELEFONO</label>
                             <input type="text" name={"TELEFONO"} onChange={handleEventChange} />
                         </div>
+                        <div>
+                            <label htmlFor="">CARGO</label>
+                            <input type="text" name={"CARGO"} onChange={handleEventChange} />
+                        </div>
+
                         <div>
                             <label htmlFor="">CIUDAD</label>
                             <input type="text" name={"CIUDAD"} onChange={handleEventChange} />
@@ -102,6 +108,17 @@ function CotizacionTerrestre() {
                             <input type="text" name={"VALIDEZ"} onChange={handleEventChange} />
                         </div>
                         <div>
+                            <label htmlFor="">*TIPO DE CARGA</label>
+                            <select name="TIPO DE CARGA" onChange={handleEventChange}>
+                                <option value="">Seleccione una opcion</option>
+                                <option value="GENERAL">GENERAL</option>
+                                <option value="PELIGROSA">PELIGROSA</option>
+                                <option value="ESPECIAL">ESPECIAL</option>
+                                <option value="REFRIGERADA">REFRIGERADA</option>
+                                <option value="PROYECTO">PROYECTO</option>
+                            </select>
+                        </div>
+                        <div>
                             <label htmlFor="">EMPAQUE</label>
                             <select name="EMPAQUE" onChange={handleEventChange}>
                                 <option value="">Seleccione una opcion</option>
@@ -114,11 +131,18 @@ function CotizacionTerrestre() {
                                 <option value="40`STD">40`STD</option>
                                 <option value="40`HQ">40`HQ</option>
                             </select>
-
+                        </div>
+                        <div>
+                            <label htmlFor="">*VOLUMEN M3</label>
+                            <input type="text" name={"VOLUMEN M3"} onChange={handleEventChange} />
                         </div>
                         <div>
                             <label htmlFor="">*PESO TN</label>
                             <input type="text" name={"PESO TN"} onChange={handleEventChange} />
+                        </div>
+                        <div>
+                            <label htmlFor="">*CANTIDAD</label>
+                            <input type="text" name={"CANTIDAD"} onChange={handleEventChange} />
                         </div>
                         <div>
                             <label htmlFor="">INCOTERM</label>
@@ -132,25 +156,7 @@ function CotizacionTerrestre() {
                                 <option value="DPU">DPU</option>
                                 <option value="DDP">DDP</option>
                                 <option value="CIF">CIF</option>
-                            </select>                        </div>
-                        <div>
-                            <label htmlFor="">*TIPO DE CARGA</label>
-                            <select name="TIPO DE CARGA" onChange={handleEventChange}>
-                                <option value="">Seleccione una opcion</option>
-                                <option value="GENERAL">GENERAL</option>
-                                <option value="PELIGROSA">PELIGROSA</option>
-                                <option value="ESPECIAL">ESPECIAL</option>
-                                <option value="REFRIGERADA">REFRIGERADA</option>
-                                <option value="PROYECTO">PROYECTO</option>
                             </select>
-                        </div>
-                        <div>
-                            <label htmlFor="">*VOLUMEN M3</label>
-                            <input type="text" name={"VOLUMEN M3"} onChange={handleEventChange} />
-                        </div>
-                        <div>
-                            <label htmlFor="">*CANTIDAD</label>
-                            <input type="text" name={"CANTIDAD"} onChange={handleEventChange} />
                         </div>
                         <div>
                             <label htmlFor="">MODALIDAD</label>
@@ -177,14 +183,6 @@ function CotizacionTerrestre() {
                             </select>
                         </div>
                         <div>
-                            <label htmlFor="">*ORIGEN</label>
-                            <input type="text" name={"ORIGEN"} onChange={handleEventChange} />
-                        </div>
-                        <div>
-                            <label htmlFor="">*CANTIDAD</label>
-                            <input type="text" name={"CANTIDAD"} onChange={handleEventChange} />
-                        </div>
-                        <div>
                             <label htmlFor="">*TIPO DE UNIDAD</label>
                             <select name="TIPO DE UNIDAD" onChange={handleEventChange}>
                                 <option value="">Seleccione una opcion</option>
@@ -199,9 +197,18 @@ function CotizacionTerrestre() {
                             </select>
                         </div>
                         <div>
+                            <label htmlFor="">*ORIGEN</label>
+                            <input type="text" name={"ORIGEN"} onChange={handleEventChange} />
+                        </div>
+                        <div>
                             <label htmlFor="">*DESTINO</label>
                             <input type="text" name={"DESTINO"} onChange={handleEventChange} />
                         </div>
+                        <div>
+                            <label htmlFor="">*CANTIDAD</label>
+                            <input type="text" name={"CANTIDAD"} onChange={handleEventChange} />
+                        </div>
+
                         <div>
                             <label htmlFor="">*MONEDA</label>
                             <input type="text" name={"MONEDA"} onChange={handleEventChange} />
@@ -290,8 +297,26 @@ function CotizacionTerrestre() {
                             )
                         })
                     }
-
+                    <br />
+                   
+                    <div className={style.inputsSemi}>
+                        <label htmlFor="">Costo Total</label><input type="text" />
+                    </div>
                     
+                    <br />
+                    <div className={style.subtitle}>INCLUYE <span className={style.counterPluss} onClick={() => handlerCounterThree('pluss')}>+</span> <span className={style.counterLess} onClick={() => handlerCounterThree('less')}>-</span></div>
+                    
+                    {
+                        incluye.map((i, index) => {
+                            return (
+                                <>
+                                    <div className={style.inputsAll}>
+                                        <input type="text" />
+                                    </div>
+                                </>
+                            )
+                        })
+                    }
                     <br />
                 </form>
             </div>

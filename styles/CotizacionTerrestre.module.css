@@ -4,21 +4,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #ffffff;
+
 }
 
 .form {
     width: 100%;
     max-width: 794px;
+    background-color: #ffffff;
 }
 
 .flex span {
     width: 100%;
     text-align: center;
-}
-
-.form > div {
-    background-color: #294B98;
-    color: #f2f2f2;
+    background-color: #ffffff;
 }
 
 .form > :nth-child(2) {
@@ -36,17 +35,23 @@
 
 .form label {
     padding-left: 10px;
+    background-color: #ffffff;
 }
 
 .form div input {
     border: none;
     border-bottom: 1px solid #294B98;
     border-left: 1px solid #294B98;
-
+    background-color: #ffffff;
 }
 .form div select {
     border: none;
     border-bottom: 1px solid #294B98;
+    background-color: white;
+}
+
+.form div select option {
+    background-color: white;
 }
 
 .imgForm {
@@ -58,12 +63,16 @@
 .subtitle {
     position: relative;
     text-align: center;
+    background-color: #294B98;
+    color: #f2f2f2;
 }
 
 .items {
     border-top: 1px solid #294B98;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    background-color: #294B98;
+    color: #f2f2f2;
 }
 
 .items div {
@@ -91,7 +100,27 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   border-right: 1px solid #294B98;
+}
+.inputsSemi {
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    color: white;
+    text-align: center;
+    border-top: 1px solid orange;
+    border-right: 1px solid orange;
+    background-color: orange;
+}
+.form .inputsSemi input{
+    border-bottom: 1px solid orange;
+    border-left: 1px solid orange;
+    background-color: #ffffff;
+}
 
+.inputsAll {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    border-right: 1px solid #294B98;
 }
 
 .firstItems {
@@ -115,6 +144,7 @@
     display: flex;
     justify-content: space-between;
 }
+
 .counterPluss {
     position: absolute;
     width: 50px;

@@ -14,7 +14,7 @@ export default function Layout (props) {
                     Cerrar Sesion
                 </Button>
             </header>
-            <main>{props.children}</main>
+            <main className={style.main}>{props.children}</main>
         </>
 
     )
