@@ -34,7 +34,7 @@ function signUpWithEmail (email, password) {
     // ..
   });
 }
-function signInWithEmail (email, password) {
+function signInWithEmail (email, password, setUserSuccess) {
   signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in
@@ -44,6 +44,7 @@ function signInWithEmail (email, password) {
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
+    setUserSuccess(false)
   });
 }
 

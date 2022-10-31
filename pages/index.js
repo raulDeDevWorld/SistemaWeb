@@ -21,7 +21,7 @@ function Login() {
         }
         const email = e.target.form[0].value
         const password = e.target.form[1].value
-        signInWithEmail(email, password)
+        signInWithEmail(email, password, setUserSuccess)
     }
 
     useEffect(() => {
@@ -42,6 +42,7 @@ function Login() {
                     </div>
                 </form>
             </main>
+            {success == false &&  <Error>ERROR: verifique e intente nuevamente</Error>}
             {success == 'complete' && <Error>Llene todo el formulario</Error>}
         </div>
     )
