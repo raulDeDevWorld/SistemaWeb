@@ -226,7 +226,7 @@ function CotizacionTerrestre() {
                     {
                         tarifa.map((i, index) => {
                             return (
-                                <>
+                                <div key={index}>
                                     <div className={`${style.items} ${style.mobil}`}>
                                         <div>
                                             <label htmlFor="">DETALLE</label>
@@ -251,7 +251,7 @@ function CotizacionTerrestre() {
                                         <input type="text" />
                                         <input type="text" />
                                     </div>
-                                </>
+                                </div>
                             )
                         })
                     }
@@ -268,7 +268,7 @@ function CotizacionTerrestre() {
                     {
                         otrosGastos.map((i, index) => {
                             return (
-                                <>
+                                <div key={index}>
                                     <div className={`${style.items} ${style.mobil}`}>
                                         <div>
                                             <label htmlFor="">DETALLE</label>
@@ -293,7 +293,7 @@ function CotizacionTerrestre() {
                                         <input type="text" />
                                         <input type="text" />
                                     </div>
-                                </>
+                                </div>
                             )
                         })
                     }
@@ -309,20 +309,20 @@ function CotizacionTerrestre() {
                     {
                         incluye.map((i, index) => {
                             return (
-                                <>
-                                    <div className={style.inputsAll}>
+                                
+                                    <div className={style.inputsAll} key={index}>
                                         <input type="text" />
                                     </div>
-                                </>
+                                
                             )
                         })
                     }
                     <br />
                 </form>
             </div>
-            <button className={style.downloadPDF}>
+        { /*   <button className={style.downloadPDF}>
                 <Image src="/download-pdf.svg" width="50" height="50" alt="User" />
-            </button>
+                </button>*/}
             <br />
             <br />
         </Layout>

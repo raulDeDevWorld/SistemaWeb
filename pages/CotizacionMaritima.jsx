@@ -29,6 +29,7 @@ function CotizacionMaritima() {
     function handleEventChange(e) {
         setData({ ...data, ...{ [e.target.name]: e.target.value } })
     }
+
     function handlerCounter(word) {
         const newTarifa = tarifa.map(i => i)
         newTarifa.pop()
@@ -44,7 +45,7 @@ function CotizacionMaritima() {
         newIncluye.pop()
         word == "pluss" ? setIncluye([...incluye, ...[""]]) : setIncluye(newIncluye)
     }
-    console.log(tarifa)
+
     return (
         <Layout>
             <div className={style.container}>
@@ -122,14 +123,10 @@ function CotizacionMaritima() {
                             <label htmlFor="">EMPAQUE</label>
                             <select name="EMPAQUE" onChange={handleEventChange}>
                                 <option value="">Seleccione una opcion</option>
-                                <option value="20`OT">20`OT</option>
-                                <option value="20`FR">20`FR</option>
-                                <option value="20`HARD TOP">20`HARD TOP</option>
-                                <option value="20`OPEN SIDE">20`OPEN SIDE</option>
-                                <option value="20`PLATAFORMA">20`PLATAFORMA</option>
-                                <option value="20`RF">20`RF</option>
-                                <option value="40`STD">40`STD</option>
-                                <option value="40`HQ">40`HQ</option>
+                                <option value="CAJAS DE CARTON">CAJAS DE CARTON</option>
+                                <option value="CAJAS DE MADERA">CAJAS DE MADERA</option>
+                                <option value="CARGA SUELTA">CARGA SUELTA</option>
+                                <option value="PALLETIZADO">PALLETIZADO</option>
                             </select>
                         </div>
                         <div>
@@ -162,10 +159,8 @@ function CotizacionMaritima() {
                             <label htmlFor="">MODALIDAD</label>
                             <select name="MODALIDAD" onChange={handleEventChange}>
                                 <option value="">Seleccione una opcion</option>
-                                <option value="FCL">FCL</option>
-                                <option value="LTL">LTL</option>
-                                <option value="CARGA SUELTA">CARGA SUELTA</option>
-                                <option value="DESCONSOLIDADO">DESCONSOLIDADO</option>
+                                <option value="MULTIMODAL">MULTIMODAL</option>
+                                <option value="MARTIMO">MARTIMO</option>
                             </select>
                         </div>
                     </div>
@@ -177,23 +172,24 @@ function CotizacionMaritima() {
                             <label htmlFor="">*SERVICIO</label>
                             <select name="SERVICIO" onChange={handleEventChange}>
                                 <option value="">Seleccione una opcion</option>
-                                <option value="NACIONAL">NACIONAL</option>
-                                <option value="INTERNACIONAL">INTERNACIONAL</option>
-                                <option value="URBANO">URBANO</option>
+                                <option value="PORTA CONTENEDORES">PORTA CONTENEDORES</option>
+                                <option value="BULK CARGO">BULK CARGO</option>
+                                <option value="RORO">RORO</option>
+                                <option value="CHARTER">CHARTER</option>
                             </select>
                         </div>
                         <div>
-                            <label htmlFor="">*TIPO DE UNIDAD</label>
-                            <select name="TIPO DE UNIDAD" onChange={handleEventChange}>
+                            <label htmlFor="">EMPAQUE</label>
+                            <select name="EMPAQUE" onChange={handleEventChange}>
                                 <option value="">Seleccione una opcion</option>
-                                <option value="CAMIONETA">CAMIONETA</option>
-                                <option value="CAMION">CAMION</option>
-                                <option value="TRAILER">TRAILER</option>
-                                <option value="LOWBOY">LOWBOY</option>
-                                <option value="CAMION CON ACOPLE">CAMION CON ACOPLE</option>
-                                <option value="FURGON CARGA SECA">FURGON CARGA SECA</option>
-                                <option value="FURGON CARGA REFRIGERADA">FURGON CARGA REFRIGERADA</option>
-                                <option value="PORTA CONTENEDORES">PORTA CONTENEDORES</option>
+                                <option value="20`OT">20`OT</option>
+                                <option value="20`FR">20`FR</option>
+                                <option value="20`HARD TOP">20`HARD TOP</option>
+                                <option value="20`OPEN SIDE">20`OPEN SIDE</option>
+                                <option value="20`PLATAFORMA">20`PLATAFORMA</option>
+                                <option value="20`RF">20`RF</option>
+                                <option value="40`STD">40`STD</option>
+                                <option value="40`HQ">40`HQ</option>
                             </select>
                         </div>
                         <div>
@@ -214,10 +210,21 @@ function CotizacionMaritima() {
                             <input type="text" name={"MONEDA"} onChange={handleEventChange} />
                         </div>
                     </div>
+                    
+
+
+
+
+
+
+
+{
+        data && data["SERVICIO"] && data["SERVICIO"] == "PORTA CONTENEDORES" && <> 
+        <br />
+                    <div className={style.subtitle}>TARIFA (Porta contenedores)<span className={style.counterPluss} onClick={() => handlerCounter('pluss')}>+</span> <span className={style.counterLess} onClick={() => handlerCounter('less')}>-</span></div>
                     <br />
-                    <div className={style.subtitle}>TARIFA <span className={style.counterPluss} onClick={() => handlerCounter('pluss')}>+</span> <span className={style.counterLess} onClick={() => handlerCounter('less')}>-</span></div>
-                    <br />
-                    <div className={`${style.containerFirstItems} ${style.desktop}`}>
+
+                        <div className={`${style.containerFirstItems} ${style.desktop}`}>
                         <span>DETALLE</span>
                         <span>FLETE UNITARIO</span>
                         <span>CANTIDAD</span>
@@ -255,20 +262,28 @@ function CotizacionMaritima() {
                             )
                         })
                     }
+</>
+}
 
+
+
+
+{
+        data && data["SERVICIO"] && data["SERVICIO"] !== "" && data["SERVICIO"] !== "PORTA CONTENEDORES" && <> 
+        <br />
+                    <div className={style.subtitle}>TARIFA (Bulk cargo, charter o roro)<span className={style.counterPluss} onClick={() => handlerCounter('pluss')}>+</span> <span className={style.counterLess} onClick={() => handlerCounter('less')}>-</span></div>
                     <br />
-                    <div className={style.subtitle}>OTROS GASTOS <span className={style.counterPluss} onClick={() => handlerCounterTwo('pluss')}>+</span> <span className={style.counterLess} onClick={() => handlerCounterTwo('less')}>-</span></div>
-                    <br />
-                    <div className={`${style.containerFirstItems} ${style.desktop}`}>
+
+                        <div className={`${style.containerFirstItems} ${style.desktop}`}>
                         <span>DETALLE</span>
                         <span>FLETE UNITARIO</span>
                         <span>CANTIDAD</span>
                         <span>FLETE TOTAL</span>
                     </div>
                     {
-                        otrosGastos.map((i, index) => {
+                        tarifa.map((i, index) => {
                             return (
-                                <>
+                                <div key={index}>
                                     <div className={`${style.items} ${style.mobil}`}>
                                         <div>
                                             <label htmlFor="">DETALLE</label>
@@ -293,7 +308,52 @@ function CotizacionMaritima() {
                                         <input type="text" />
                                         <input type="text" />
                                     </div>
-                                </>
+                                </div>
+                            )
+                        })
+                    }
+</>
+}
+
+
+                    <br />
+                    <div className={style.subtitle}>OTROS GASTOS <span className={style.counterPluss} onClick={() => handlerCounterTwo('pluss')}>+</span> <span className={style.counterLess} onClick={() => handlerCounterTwo('less')}>-</span></div>
+                    <br />
+                    <div className={`${style.containerFirstItems} ${style.desktop}`}>
+                        <span>DETALLE</span>
+                        <span>FLETE UNITARIO</span>
+                        <span>CANTIDAD</span>
+                        <span>FLETE TOTAL</span>
+                    </div>
+                    {
+                        otrosGastos.map((i, index) => {
+                            return (
+                                <div key={index}>
+                                    <div className={`${style.items} ${style.mobil}`}>
+                                        <div>
+                                            <label htmlFor="">DETALLE</label>
+                                            <input type="text" />
+                                        </div>
+                                        <div>
+                                            <label htmlFor="">FLETE UNITARIO</label>
+                                            <input type="text" />
+                                        </div>
+                                        <div>
+                                            <label htmlFor="">CANTIDAD</label>
+                                            <input type="text" />
+                                        </div>
+                                        <div>
+                                            <label htmlFor="">FLETE TOTAL</label>
+                                            <input type="text" />
+                                        </div>
+                                    </div>
+                                    <div className={`${style.inputs} ${style.desktop}`}>
+                                        <input type="text" />
+                                        <input type="text" />
+                                        <input type="text" />
+                                        <input type="text" />
+                                    </div>
+                                </div>
                             )
                         })
                     }
@@ -309,20 +369,18 @@ function CotizacionMaritima() {
                     {
                         incluye.map((i, index) => {
                             return (
-                                <>
-                                    <div className={style.inputsAll}>
+                                
+                                    <div className={style.inputsAll} key={index}>
                                         <input type="text" />
                                     </div>
-                                </>
+                                
                             )
                         })
                     }
                     <br />
                 </form>
             </div>
-            <button className={style.downloadPDF}>
-                <Image src="/download-pdf.svg" width="50" height="50" alt="User" />
-            </button>
+
             <br />
             <br />
         </Layout>

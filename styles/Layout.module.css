@@ -14,16 +14,20 @@
     border-bottom: 10px solid #F1BA06;
     z-index: 10000;
   }
-  
-  .header :nth-child(2) {
+  .header button {
+    display: inline-block;
     width: 100px;
     height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
+    margin-left: 10px;
   }
-
+.containerButtons {
+  display: flex;
+}
   .main {
     background-color: white;
+    min-height: 100vh;
   }
