@@ -210,7 +210,6 @@ function CotizacionMaritima() {
                             <input type="text" name={"MONEDA"} onChange={handleEventChange} />
                         </div>
                     </div>
-                    
 
 
 
@@ -218,102 +217,63 @@ function CotizacionMaritima() {
 
 
 
-{
-        data && data["SERVICIO"] && data["SERVICIO"] == "PORTA CONTENEDORES" && <> 
-        <br />
-                    <div className={style.subtitle}>TARIFA (Porta contenedores)<span className={style.counterPluss} onClick={() => handlerCounter('pluss')}>+</span> <span className={style.counterLess} onClick={() => handlerCounter('less')}>-</span></div>
-                    <br />
 
-                        <div className={`${style.containerFirstItems} ${style.desktop}`}>
-                        <span>DETALLE</span>
-                        <span>FLETE UNITARIO</span>
-                        <span>CANTIDAD</span>
-                        <span>FLETE TOTAL</span>
-                    </div>
                     {
-                        tarifa.map((i, index) => {
-                            return (
-                                <>
-                                    <div className={`${style.items} ${style.mobil}`}>
-                                        <div>
-                                            <label htmlFor="">DETALLE</label>
-                                            <input type="text" />
+                        data && data["SERVICIO"] && data["SERVICIO"] == "PORTA CONTENEDORES" && <>
+                            <br />
+                            <div className={style.subtitle}>TARIFA (Porta contenedores)<span className={style.counterPluss} onClick={() => handlerCounter('pluss')}>+</span> <span className={style.counterLess} onClick={() => handlerCounter('less')}>-</span></div>
+                            <br />
+
+                            <div className={`${style.containerFirstItems} ${style.desktop}`}>
+                                <span>DETALLE</span>
+                                <span>FLETE UNITARIO</span>
+                                <span>CANTIDAD</span>
+                                <span>FLETE TOTAL</span>
+                            </div>
+                            {
+                                tarifa.map((i, index) => {
+                                    return (
+                                        <div className={`${style.inputs}`} key={index}>
+                                            <input type="text" placeholder="DETALLE" />
+                                            <input type="text" placeholder="FLETE UNITARIO" />
+                                            <input type="text" placeholder="CANTIDAD" />
+                                            <input type="text" placeholder="FLETE TOTAL" />
                                         </div>
-                                        <div>
-                                            <label htmlFor="">FLETE UNITARIO</label>
-                                            <input type="text" />
-                                        </div>
-                                        <div>
-                                            <label htmlFor="">CANTIDAD</label>
-                                            <input type="text" />
-                                        </div>
-                                        <div>
-                                            <label htmlFor="">FLETE TOTAL</label>
-                                            <input type="text" />
-                                        </div>
-                                    </div>
-                                    <div className={`${style.inputs} ${style.desktop}`}>
-                                        <input type="text" />
-                                        <input type="text" />
-                                        <input type="text" />
-                                        <input type="text" />
-                                    </div>
-                                </>
-                            )
-                        })
+                                    )
+                                })
+                            }
+                        </>
                     }
-</>
-}
 
 
 
 
-{
-        data && data["SERVICIO"] && data["SERVICIO"] !== "" && data["SERVICIO"] !== "PORTA CONTENEDORES" && <> 
-        <br />
-                    <div className={style.subtitle}>TARIFA (Bulk cargo, charter o roro)<span className={style.counterPluss} onClick={() => handlerCounter('pluss')}>+</span> <span className={style.counterLess} onClick={() => handlerCounter('less')}>-</span></div>
-                    <br />
-
-                        <div className={`${style.containerFirstItems} ${style.desktop}`}>
-                        <span>DETALLE</span>
-                        <span>FLETE UNITARIO</span>
-                        <span>CANTIDAD</span>
-                        <span>FLETE TOTAL</span>
-                    </div>
                     {
-                        tarifa.map((i, index) => {
-                            return (
-                                <div key={index}>
-                                    <div className={`${style.items} ${style.mobil}`}>
-                                        <div>
-                                            <label htmlFor="">DETALLE</label>
-                                            <input type="text" />
+                        data && data["SERVICIO"] && data["SERVICIO"] !== "" && data["SERVICIO"] !== "PORTA CONTENEDORES" && <>
+                            <br />
+                            <div className={style.subtitle}>TARIFA (Bulk cargo, charter o roro)<span className={style.counterPluss} onClick={() => handlerCounter('pluss')}>+</span> <span className={style.counterLess} onClick={() => handlerCounter('less')}>-</span></div>
+                            <br />
+
+                            <div className={`${style.containerFirstItems} ${style.desktop}`}>
+                                <span>DETALLE</span>
+                                <span>FLETE UNITARIO</span>
+                                <span>CANTIDAD</span>
+                                <span>FLETE TOTAL</span>
+                            </div>
+                            {
+                                tarifa.map((i, index) => {
+                                    return (
+                                        <div className={`${style.inputs}`} key={index}>
+                                            <input type="text" placeholder="DETALLE" />
+                                            <input type="text" placeholder="FLETE UNITARIO" />
+                                            <input type="text" placeholder="CANTIDAD" />
+                                            <input type="text" placeholder="FLETE TOTAL" />
                                         </div>
-                                        <div>
-                                            <label htmlFor="">FLETE UNITARIO</label>
-                                            <input type="text" />
-                                        </div>
-                                        <div>
-                                            <label htmlFor="">CANTIDAD</label>
-                                            <input type="text" />
-                                        </div>
-                                        <div>
-                                            <label htmlFor="">FLETE TOTAL</label>
-                                            <input type="text" />
-                                        </div>
-                                    </div>
-                                    <div className={`${style.inputs} ${style.desktop}`}>
-                                        <input type="text" />
-                                        <input type="text" />
-                                        <input type="text" />
-                                        <input type="text" />
-                                    </div>
-                                </div>
-                            )
-                        })
+                                    )
+                                })
+                            }
+                        </>
                     }
-</>
-}
 
 
                     <br />
@@ -327,53 +287,35 @@ function CotizacionMaritima() {
                     </div>
                     {
                         otrosGastos.map((i, index) => {
+
                             return (
-                                <div key={index}>
-                                    <div className={`${style.items} ${style.mobil}`}>
-                                        <div>
-                                            <label htmlFor="">DETALLE</label>
-                                            <input type="text" />
-                                        </div>
-                                        <div>
-                                            <label htmlFor="">FLETE UNITARIO</label>
-                                            <input type="text" />
-                                        </div>
-                                        <div>
-                                            <label htmlFor="">CANTIDAD</label>
-                                            <input type="text" />
-                                        </div>
-                                        <div>
-                                            <label htmlFor="">FLETE TOTAL</label>
-                                            <input type="text" />
-                                        </div>
-                                    </div>
-                                    <div className={`${style.inputs} ${style.desktop}`}>
-                                        <input type="text" />
-                                        <input type="text" />
-                                        <input type="text" />
-                                        <input type="text" />
-                                    </div>
+                                <div className={`${style.inputs}`} key={index}>
+                                    <input type="text" placeholder="DETALLE" />
+                                    <input type="text" placeholder="FLETE UNITARIO" />
+                                    <input type="text" placeholder="CANTIDAD" />
+                                    <input type="text" placeholder="FLETE TOTAL" />
                                 </div>
                             )
+
                         })
                     }
                     <br />
-                   
+
                     <div className={style.inputsSemi}>
                         <label htmlFor="">Costo Total</label><input type="text" />
                     </div>
-                    
+
                     <br />
                     <div className={style.subtitle}>INCLUYE <span className={style.counterPluss} onClick={() => handlerCounterThree('pluss')}>+</span> <span className={style.counterLess} onClick={() => handlerCounterThree('less')}>-</span></div>
-                    
+
                     {
                         incluye.map((i, index) => {
                             return (
-                                
-                                    <div className={style.inputsAll} key={index}>
-                                        <input type="text" />
-                                    </div>
-                                
+
+                                <div className={style.inputsAll} key={index}>
+                                    <input type="text" />
+                                </div>
+
                             )
                         })
                     }

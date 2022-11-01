@@ -63,6 +63,7 @@
     text-align: center;
     background-color: #294B98;
     color: #f2f2f2;
+    padding: 0px 100px;
 }
 
 .items {
@@ -144,7 +145,11 @@
 }
 
 .counterPluss {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
+    top: 0;
     width: 50px;
     right: 0px;
     background-color: rgb(115, 169, 35);
@@ -152,7 +157,11 @@
 
 }
 .counterLess {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
+    top: 0;
     width: 50px;
     right: 50px;
     background-color: rgb(234, 0, 0);
@@ -171,9 +180,12 @@
     border-radius: 10px;
 }
 
+.form input::placeholder {
+    color: white;
+  }
 @media (max-width: 750px) {
     .subtitle {
-        height: 30px;
+        min-height: 30px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -214,7 +226,17 @@
     .containerFirstItems {
         flex-direction: column;
     }
+    .counterPluss {
+        height: 100%;
+        min-height: 30px;
 
+    
+    }
+    .counterLess {
+        height: 100%;
+        min-height: 30px;
+
+    }
     .firstItems div {
         display: flex;
         flex-direction: column;
@@ -229,8 +251,16 @@
     .mobil {
         display: block;
     }
-
+    .inputs {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        border-right: 1px solid #294B98;
+        margin-bottom: 16px;
+      }
     .desktop {
         display: none;
     }
+    .form input::placeholder {
+        color: rgb(143, 143, 143);
+      }
 }

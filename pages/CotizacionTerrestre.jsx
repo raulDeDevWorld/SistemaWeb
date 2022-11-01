@@ -226,31 +226,11 @@ function CotizacionTerrestre() {
                     {
                         tarifa.map((i, index) => {
                             return (
-                                <div key={index}>
-                                    <div className={`${style.items} ${style.mobil}`}>
-                                        <div>
-                                            <label htmlFor="">DETALLE</label>
-                                            <input type="text" />
-                                        </div>
-                                        <div>
-                                            <label htmlFor="">FLETE UNITARIO</label>
-                                            <input type="text" />
-                                        </div>
-                                        <div>
-                                            <label htmlFor="">CANTIDAD</label>
-                                            <input type="text" />
-                                        </div>
-                                        <div>
-                                            <label htmlFor="">FLETE TOTAL</label>
-                                            <input type="text" />
-                                        </div>
-                                    </div>
-                                    <div className={`${style.inputs} ${style.desktop}`}>
-                                        <input type="text" />
-                                        <input type="text" />
-                                        <input type="text" />
-                                        <input type="text" />
-                                    </div>
+                                <div className={`${style.inputs}`} key={index}>
+                                    <input type="text" placeholder="DETALLE"/>
+                                    <input type="text" placeholder="FLETE UNITARIO"/>
+                                    <input type="text" placeholder="CANTIDAD" />
+                                    <input type="text" placeholder= "FLETE TOTAL"/>
                                 </div>
                             )
                         })
@@ -268,59 +248,36 @@ function CotizacionTerrestre() {
                     {
                         otrosGastos.map((i, index) => {
                             return (
-                                <div key={index}>
-                                    <div className={`${style.items} ${style.mobil}`}>
-                                        <div>
-                                            <label htmlFor="">DETALLE</label>
-                                            <input type="text" />
-                                        </div>
-                                        <div>
-                                            <label htmlFor="">FLETE UNITARIO</label>
-                                            <input type="text" />
-                                        </div>
-                                        <div>
-                                            <label htmlFor="">CANTIDAD</label>
-                                            <input type="text" />
-                                        </div>
-                                        <div>
-                                            <label htmlFor="">FLETE TOTAL</label>
-                                            <input type="text" />
-                                        </div>
-                                    </div>
-                                    <div className={`${style.inputs} ${style.desktop}`}>
-                                        <input type="text" />
-                                        <input type="text" />
-                                        <input type="text" />
-                                        <input type="text" />
-                                    </div>
+                                <div className={`${style.inputs}`} key={index}>
+                                    <input type="text" placeholder="DETALLE"/>
+                                    <input type="text" placeholder="FLETE UNITARIO"/>
+                                    <input type="text" placeholder="CANTIDAD" />
+                                    <input type="text" placeholder= "FLETE TOTAL"/>
                                 </div>
                             )
                         })
                     }
                     <br />
-                   
+
                     <div className={style.inputsSemi}>
                         <label htmlFor="">Costo Total</label><input type="text" />
                     </div>
-                    
+
                     <br />
                     <div className={style.subtitle}>INCLUYE <span className={style.counterPluss} onClick={() => handlerCounterThree('pluss')}>+</span> <span className={style.counterLess} onClick={() => handlerCounterThree('less')}>-</span></div>
-                    
                     {
                         incluye.map((i, index) => {
                             return (
-                                
-                                    <div className={style.inputsAll} key={index}>
-                                        <input type="text" />
-                                    </div>
-                                
+                                <div className={style.inputsAll} key={index}>
+                                    <input type="text" />
+                                </div>
                             )
                         })
                     }
                     <br />
                 </form>
             </div>
-        { /*   <button className={style.downloadPDF}>
+            { /*   <button className={style.downloadPDF}>
                 <Image src="/download-pdf.svg" width="50" height="50" alt="User" />
                 </button>*/}
             <br />
