@@ -4,7 +4,7 @@ import style from "../styles/StylesPDF.module.css"
 
 
 
-const InvoicePDF = dynamic(() => import("./pdf"), {
+const InvoicePDF = dynamic(() => import("../components/pdf"), {
     ssr: false,
   });
 
