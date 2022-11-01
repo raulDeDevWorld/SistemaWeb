@@ -22,6 +22,7 @@ function CotizacionMaritima() {
     const [tarifa, setTarifa] = useState([""])
     const [otrosGastos, setOtrosGastos] = useState([""])
     const [incluye, setIncluye] = useState([""])
+    const [excluye, setExcluye] = useState([""])
 
 
 
@@ -46,6 +47,12 @@ function CotizacionMaritima() {
         word == "pluss" ? setIncluye([...incluye, ...[""]]) : setIncluye(newIncluye)
     }
 
+
+    function handlerCounterFour(word) {
+        const newExcluye = excluye.map(i => i)
+        newExcluye.pop()
+        word == "pluss" ? setExcluye([...excluye, ...[""]]) : setExcluye(newExcluye)
+    }
     return (
         <Layout>
             <div className={style.container}>
@@ -256,8 +263,8 @@ function CotizacionMaritima() {
 
                             <div className={`${style.containerFirstItems} ${style.desktop}`}>
                                 <span>DETALLE</span>
-                                <span>FLETE UNITARIO</span>
-                                <span>CANTIDAD</span>
+                                <span>FLETE W/M</span>
+                                <span>W/M</span>
                                 <span>FLETE TOTAL</span>
                             </div>
                             {
@@ -265,8 +272,8 @@ function CotizacionMaritima() {
                                     return (
                                         <div className={`${style.inputs}`} key={index}>
                                             <input type="text" placeholder="DETALLE" />
-                                            <input type="text" placeholder="FLETE UNITARIO" />
-                                            <input type="text" placeholder="CANTIDAD" />
+                                            <input type="text" placeholder="FLETE W/M" />
+                                            <input type="text" placeholder="W/M" />
                                             <input type="text" placeholder="FLETE TOTAL" />
                                         </div>
                                     )
@@ -281,9 +288,9 @@ function CotizacionMaritima() {
                     <br />
                     <div className={`${style.containerFirstItems} ${style.desktop}`}>
                         <span>DETALLE</span>
-                        <span>FLETE UNITARIO</span>
+                        <span>C0STE UNITARIO</span>
                         <span>CANTIDAD</span>
-                        <span>FLETE TOTAL</span>
+                        <span>COSTO TOTAL</span>
                     </div>
                     {
                         otrosGastos.map((i, index) => {
@@ -320,6 +327,18 @@ function CotizacionMaritima() {
                         })
                     }
                     <br />
+                    <div className={style.subtitle}>EXCLUYE <span className={style.counterPluss} onClick={() => handlerCounterFour('pluss')}>+</span> <span className={style.counterLess} onClick={() => handlerCounterFour('less')}>-</span></div>
+
+                    {
+                        excluye.map((i, index) => {
+                            return (
+
+                                <div className={style.inputsAll} key={index}>
+                                    <input type="text" />
+                                </div>
+                            )
+                        })
+                    }
                 </form>
             </div>
 
