@@ -46,8 +46,6 @@ function CotizacionMaritima() {
         newIncluye.pop()
         word == "pluss" ? setIncluye([...incluye, ...[""]]) : setIncluye(newIncluye)
     }
-
-
     function handlerCounterFour(word) {
         const newExcluye = excluye.map(i => i)
         newExcluye.pop()
@@ -217,14 +215,6 @@ function CotizacionMaritima() {
                             <input type="text" name={"MONEDA"} onChange={handleEventChange} />
                         </div>
                     </div>
-
-
-
-
-
-
-
-
                     {
                         data && data["SERVICIO"] && data["SERVICIO"] == "PORTA CONTENEDORES" && <>
                             <br />
@@ -251,10 +241,6 @@ function CotizacionMaritima() {
                             }
                         </>
                     }
-
-
-
-
                     {
                         data && data["SERVICIO"] && data["SERVICIO"] !== "" && data["SERVICIO"] !== "PORTA CONTENEDORES" && <>
                             <br />
@@ -281,8 +267,6 @@ function CotizacionMaritima() {
                             }
                         </>
                     }
-
-
                     <br />
                     <div className={style.subtitle}>OTROS GASTOS <span className={style.counterPluss} onClick={() => handlerCounterTwo('pluss')}>+</span> <span className={style.counterLess} onClick={() => handlerCounterTwo('less')}>-</span></div>
                     <br />
