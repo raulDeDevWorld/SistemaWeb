@@ -17,11 +17,11 @@ const PDFView = () => {
         <Document>
             <Page  style={styles.body} >
                 <View>
-                    <Text wrap={false} style={{alignSelf: "flex-end", color: "black"}}>Goodbye, world!hgdkljfhsalhgfljadhsgflhasdlhfgsaljdhgflhasgflhgasdl;hfg;aksdjgf;kjsdahf;kjhasd;kjhf;kjashdf;kjhasd;kjfhjks;adhfkjhsadk;jfhaskjdhfkjsahdfkjhsadkj;hfkjsdhfkjhasd;kjhfkjsadhfkjhsda;kjh;</Text>
+                    <Text wrap={false} style={{alignSelf: "flex-end", color: "black"}}>hello world</Text>
                 </View>
                 <View>
-                    <Image src="/assets/image.png"/>
-                    <Text wrap={false} style={{alignSelf: "flex-end", color: "black"}}>Goodbye, world!hgdkljfhsalhgfljadhsgflhasdlhfgsaljdhgflhasgflhgasdl;hfg;aksdjgf;kjsdahf;kjhasd;kjhf;kjashdf;kjhasd;kjfhjks;adhfkjhsadk;jfhaskjdhfkjsahdfkjhsadkj;hfkjsdhfkjhasd;kjhfkjsadhfkjhsda;kjh;</Text>
+                    <Image src="/logo.png"/>
+                    <Text wrap={false} style={{alignSelf: "flex-end", color: "black"}}>Estamos trabajando</Text>
                 </View>
             </Page>
         </Document>
