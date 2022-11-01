@@ -241,18 +241,18 @@ function CotizacionTerrestre() {
                     <br />
                     <div className={`${style.containerFirstItems} ${style.desktop}`}>
                         <span>DETALLE</span>
-                        <span>FLETE UNITARIO</span>
+                        <span>COSTO UNITARIO</span>
                         <span>CANTIDAD</span>
-                        <span>FLETE TOTAL</span>
+                        <span>COSTO TOTAL</span>
                     </div>
                     {
                         otrosGastos.map((i, index) => {
                             return (
                                 <div className={`${style.inputs}`} key={index}>
                                     <input type="text" placeholder="DETALLE"/>
-                                    <input type="text" placeholder="FLETE UNITARIO"/>
+                                    <input type="text" placeholder="COSTO UNITARIO"/>
                                     <input type="text" placeholder="CANTIDAD" />
-                                    <input type="text" placeholder= "FLETE TOTAL"/>
+                                    <input type="text" placeholder= "COSTO TOTAL"/>
                                 </div>
                             )
                         })
