@@ -1,12 +1,14 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { Document, Page, View, Text, Image, PDFViewer, StyleSheet, Font } from "@react-pdf/renderer";
 
+Font.register( {family: "Inter", src: "/assets/font.otf"})
+
 const styles = StyleSheet.create({
     body: {
-        width: 1000,
-        heigth: 100,
         paddingTop: 20,
     },
+    fontFamily: "Inter"
+
 })
 
 const PDFView = () => {
