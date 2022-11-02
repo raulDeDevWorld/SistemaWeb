@@ -58,7 +58,7 @@ function CotizacionMaritima() {
                     <div className={style.subtitle}>COTIZACIÓN TRANSPORTE MARITIMO</div>
                     <div className={style.containerFirstItems}>
                         <div className={style.imgForm}>
-                            <Image src="/logo.svg" width="250" height="150" alt="User" />
+                            <Image    src="/logo.svg" width="250" height="150" alt="User" />
                         </div>
                         <div className={style.firstItems}>
                             <div>

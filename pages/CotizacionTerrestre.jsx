@@ -24,7 +24,7 @@ function CotizacionTerrestre() {
     const [incluye, setIncluye] = useState([""])
 
 
-
+console.log(data)
 
     function handleEventChange(e) {
         setData({ ...data, ...{ [e.target.name]: e.target.value } })

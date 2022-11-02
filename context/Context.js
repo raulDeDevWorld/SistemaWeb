@@ -6,6 +6,7 @@ export function UserProvider ({ children }) {
 
 	const [user, setUser] = useState(undefined)
 	const [userDB, setUserDB] = useState('')
+	const [pdfData, setPdfData] = useState({})
 	const [specificData, setSpecificData] = useState(null)
 	const [specificDataEditable, setSpecificDataEditable] = useState(null)
 	const [success, setSuccess] = useState(null)
@@ -16,6 +17,9 @@ export function UserProvider ({ children }) {
 	}
 	function setUserData (userDatabase) {
 		setUserDB(userDatabase)
+	}
+	function setUserPdfData (data) {
+		setPdfData(data)
 	}
 	function setUserSpecificData (userSpecificData) {
 		setSpecificData(userSpecificData)
@@ -32,16 +36,18 @@ export function UserProvider ({ children }) {
 		return ({
 			user,
 			userDB,
+			pdfData,
 			specificData,
 			specificDataEditable,
 			success,
 			setUserProfile,
 			setUserData,
+			setUserPdfData,
 			setUserSpecificData,
 			setUserSpecificDataEditable,
 			setUserSuccess,
 		})
-	}, [ user, userDB, success, specificData, specificDataEditable ])
+	}, [ user, userDB, pdfData, success, specificData, specificDataEditable ])
 
 	return (
 		<UserContext.Provider value={value} >
