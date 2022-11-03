@@ -8,7 +8,7 @@ const InvoicePDF = dynamic(() => import("../components/Pdf"), {
     ssr: false,
   });
 
-const View = () => {
+const PdfView = () => {
 
     return(
         <div className={style.style}>
@@ -18,4 +18,4 @@ const View = () => {
 }
 
 
-export default View
+export default PdfView

@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
 
 })
 
-const PDFView = () => {
+const Pdf = () => {
     const { pdfData } = useUser()
 
     
@@ -247,4 +247,4 @@ const PDFView = () => {
 }
 
 
-export default PDFView
+export default Pdf
