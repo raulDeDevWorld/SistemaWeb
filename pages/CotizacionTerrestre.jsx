@@ -15,7 +15,7 @@ import Button from '../components/Button'
 
 
 function CotizacionTerrestre() {
-    const { user } = useUser()
+    const { user, pdfData, setUserPdfData } = useUser()
     const router = useRouter()
 
     const [data, setData] = useState({})
@@ -24,10 +24,10 @@ function CotizacionTerrestre() {
     const [incluye, setIncluye] = useState([""])
 
 
-console.log(data)
+console.log(pdfData)
 
     function handleEventChange(e) {
-        setData({ ...data, ...{ [e.target.name]: e.target.value } })
+        setUserPdfData({ ...pdfData, ...{ [e.target.name]: e.target.value } })
     }
     function handlerCounter(word) {
         const newTarifa = tarifa.map(i => i)
@@ -43,6 +43,10 @@ console.log(data)
         const newIncluye = incluye.map(i => i)
         newIncluye.pop()
         word == "pluss" ? setIncluye([...incluye, ...[""]]) : setIncluye(newIncluye)
+    }
+    
+    function handlerPdfButton () {
+        router.push("/PdfView")
     }
     console.log(tarifa)
     return (
@@ -105,7 +109,7 @@ console.log(data)
                     <div className={style.items}>
                         <div>
                             <label htmlFor="">MERCANCIA</label>
-                            <input type="text" name={"VALIDEZ"} onChange={handleEventChange} />
+                            <input type="text" name={"MERCANCIA"} onChange={handleEventChange} />
                         </div>
                         <div>
                             <label htmlFor="">*TIPO DE CARGA</label>
@@ -277,9 +281,9 @@ console.log(data)
                     <br />
                 </form>
             </div>
-            { /*   <button className={style.downloadPDF}>
+            <button className={style.downloadPDF} onClick={handlerPdfButton}>
                 <Image src="/download-pdf.svg" width="50" height="50" alt="User" />
-                </button>*/}
+            </button>
             <br />
             <br />
         </Layout>
