@@ -10,6 +10,12 @@ const InvoicePDF = dynamic(() => import("../components/Pdf"), {
 
 const PdfView = () => {
 
+    const [client, setClient] = useState(false)
+
+    useEffect(() => {
+        setClient(true)
+    }, [])
+    
     return(
         <div className={style.style}>
                     <InvoicePDF />
