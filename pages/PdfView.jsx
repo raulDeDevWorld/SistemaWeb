@@ -4,18 +4,14 @@ import style from "../styles/StylesPDF.module.css"
 
 
 
-const InvoicePDF = dynamic(() => import("../components/Pdf"), {
+const InvoicePDF = dynamic(() => import("./Pdf"), {
     ssr: false,
   });
 
 const PdfView = () => {
 
-    const [client, setClient] = useState(false)
+  
 
-    useEffect(() => {
-        setClient(true)
-    }, [])
-    
     return(
         <div className={style.style}>
                     <InvoicePDF />
@@ -25,3 +21,14 @@ const PdfView = () => {
 
 
 export default PdfView
+
+
+
+
+
+
+
+
+
+
+
