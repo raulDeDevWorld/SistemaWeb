@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: "#ffffff",
-        fontSize: "12px"
+        fontSize: "10px"
     },
     fontFamily: "Inter",
     subtitle: {
@@ -21,7 +21,9 @@ const styles = StyleSheet.create({
         backgroundColor: "#294B98",
         color: "#f2f2f2",
         padding: "0px 100px",
-        margin: "16px 0"
+        margin: "16px 0",
+        fontSize: "10px"
+
     },
 
 
@@ -66,12 +68,16 @@ const styles = StyleSheet.create({
         border: "1px solid #294B98",
         backgroundColor: "#294B98",
         color: "#f2f2f2",
+        fontSize: "10px"
+
     },
     value: {
         width: "50%",
         padding: "0px 5px",
         border: "0.5px solid #294B98",
         color: "#000000",
+        fontSize: "10px"
+
 
     },
     viewKeyValueTwo: {

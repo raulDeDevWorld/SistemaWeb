@@ -203,6 +203,19 @@
 .form input::placeholder {
     color: white;
   }
+
+  .items {
+    text-align: center;
+  }
+
+  .newStyle label {
+    background-color: #ffffff;
+    color: black;
+    font-weight: bold;
+    border-bottom: 1px solid #294B98;
+    border-left: 1px solid #294B98;
+
+  }
 @media (max-width: 750px) {
     .subtitle {
         min-height: 30px;

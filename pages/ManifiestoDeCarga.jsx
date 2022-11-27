@@ -146,7 +146,7 @@ function CotizacionTerrestre() {
                     <br />
                     <div className={style.subtitle}>DATOS DEL TRANSPORTISTA</div>
                     <br />
-                    <div className={style.items}>
+                    <div className={`${style.items} ${style.newStyle}`}>
                         <div>
                             <label htmlFor="">NOMBRE</label>
                             <input type="text" name={"NOMBRE"} onChange={handleEventChange} />
@@ -186,7 +186,7 @@ function CotizacionTerrestre() {
                     <br />
                     <div className={style.subtitle}>iNFORMACION DEL SERVICIO</div>
                     <br />
-                    <div className={style.items}>
+                    <div className={`${style.items} ${style.newStyle}`}>
                         <div>
                             <label htmlFor="">MERCANCIA</label>
                             <input type="text" name={"NOMBRE"} onChange={handleEventChange} />
@@ -258,14 +258,14 @@ function CotizacionTerrestre() {
 
                     <div className={style.items}>
                         <div>
-                            <label htmlFor="">DOCUMENTACION SOPORTE</label>
+                            <span htmlFor="">DOCUMENTACION SOPORTE</span>
                         </div>
                         <div>
-                            <label htmlFor="">iNSTRUCCIONES DEL TRANSPORTE</label>
+                            <span htmlFor="">iNSTRUCCIONES DEL TRANSPORTE</span>
                         </div>
                         <div>
-                            <label htmlFor="">DOCUMENTO</label>
-                            <label htmlFor="">NUMERO</label>
+                            <span htmlFor="">DOCUMENTO</span>
+                            <span htmlFor="">NUMERO</span>
                         </div>
                         <div>
                             <input type="text" name={"EMPRESA"} onChange={handleEventChange} />
