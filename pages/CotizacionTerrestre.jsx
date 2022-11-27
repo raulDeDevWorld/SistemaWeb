@@ -48,7 +48,7 @@ console.log(pdfData)
     function handlerPdfButton () {
         router.push("/PdfView")
     }
-    console.log(tarifa)
+
     return (
         <Layout>
             <div className={style.container}>

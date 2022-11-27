@@ -24,7 +24,7 @@ function CotizacionTerrestre() {
     const [incluye, setIncluye] = useState([""])
 
 
-console.log(pdfData)
+    console.log(pdfData)
 
     function handleEventChange(e) {
         setUserPdfData({ ...pdfData, ...{ [e.target.name]: e.target.value } })
@@ -44,8 +44,8 @@ console.log(pdfData)
         newIncluye.pop()
         word == "pluss" ? setIncluye([...incluye, ...[""]]) : setIncluye(newIncluye)
     }
-    
-    function handlerPdfButton () {
+
+    function handlerPdfButton() {
         router.push("/PdfView")
     }
     console.log(tarifa)
@@ -53,7 +53,7 @@ console.log(pdfData)
         <Layout>
             <div className={style.container}>
                 <form className={style.form}>
-                    <div className={style.subtitle}>COTIZACIÓN TRANSPORTE TERRESTRE</div>
+                    <div className={style.subtitle}>COTIZACIÓN TRANSPORTE AREO</div>
                     <div className={style.containerFirstItems}>
                         <div className={style.imgForm}>
                             <Image src="/logo.svg" width="250" height="150" alt="User" />
@@ -126,27 +126,11 @@ console.log(pdfData)
                             <label htmlFor="">EMPAQUE</label>
                             <select name="EMPAQUE" onChange={handleEventChange}>
                                 <option value="">Seleccione una opcion</option>
-                                <option value="20`OT">20`OT</option>
-                                <option value="20`FR">20`FR</option>
-                                <option value="20`HARD TOP">20`HARD TOP</option>
-                                <option value="20`OPEN SIDE">20`OPEN SIDE</option>
-                                <option value="20`PLATAFORMA">20`PLATAFORMA</option>
-                                <option value="20`RF">20`RF</option>
-                                <option value="40`STD">40`STD</option>
-                                <option value="40`HQ">40`HQ</option>
+                                <option value="CAJAS DE CARTON">CAJAS DE CARTON</option>
+                                <option value="CAJAS DE MADERA">CAJAS DE MADERA</option>
+                                <option value="CARGA SUELTA">CARGA SUELTA</option>
+                                <option value="PALLETIZADO">PALLETIZADO</option>
                             </select>
-                        </div>
-                        <div>
-                            <label htmlFor="">*VOLUMEN M3</label>
-                            <input type="text" name={"VOLUMEN M3"} onChange={handleEventChange} />
-                        </div>
-                        <div>
-                            <label htmlFor="">*PESO TN</label>
-                            <input type="text" name={"PESO TN"} onChange={handleEventChange} />
-                        </div>
-                        <div>
-                            <label htmlFor="">*CANTIDAD</label>
-                            <input type="text" name={"CANTIDAD"} onChange={handleEventChange} />
                         </div>
                         <div>
                             <label htmlFor="">INCOTERM</label>
@@ -163,58 +147,60 @@ console.log(pdfData)
                             </select>
                         </div>
                         <div>
-                            <label htmlFor="">MODALIDAD</label>
-                            <select name="MODALIDAD" onChange={handleEventChange}>
-                                <option value="">Seleccione una opcion</option>
-                                <option value="FCL">FCL</option>
-                                <option value="LTL">LTL</option>
-                                <option value="CARGA SUELTA">CARGA SUELTA</option>
-                                <option value="DESCONSOLIDADO">DESCONSOLIDADO</option>
-                            </select>
-                        </div>
-                    </div>
-                    <br />
-                    <div className={style.subtitle}>DETALLES DEL SERVICIO</div>
-                    <br />
-                    <div className={style.items}>
-                        <div>
-                            <label htmlFor="">*SERVICIO</label>
-                            <select name="SERVICIO" onChange={handleEventChange}>
-                                <option value="">Seleccione una opcion</option>
-                                <option value="NACIONAL">NACIONAL</option>
-                                <option value="INTERNACIONAL">INTERNACIONAL</option>
-                                <option value="URBANO">URBANO</option>
-                            </select>
+                            <label htmlFor="">PESO KG</label>
+                            <input type="text" name={"PESO KG"} onChange={handleEventChange} />
                         </div>
                         <div>
-                            <label htmlFor="">*TIPO DE UNIDAD</label>
-                            <select name="TIPO DE UNIDAD" onChange={handleEventChange}>
-                                <option value="">Seleccione una opcion</option>
-                                <option value="CAMIONETA">CAMIONETA</option>
-                                <option value="CAMION">CAMION</option>
-                                <option value="TRAILER">TRAILER</option>
-                                <option value="LOWBOY">LOWBOY</option>
-                                <option value="CAMION CON ACOPLE">CAMION CON ACOPLE</option>
-                                <option value="FURGON CARGA SECA">FURGON CARGA SECA</option>
-                                <option value="FURGON CARGA REFRIGERADA">FURGON CARGA REFRIGERADA</option>
-                                <option value="PORTA CONTENEDORES">PORTA CONTENEDORES</option>
-                            </select>
+                            <label htmlFor="">VOLUMEN M3</label>
+                            <input type="text" name={"VOLUMEN M3"} onChange={handleEventChange} />
                         </div>
                         <div>
-                            <label htmlFor="">*ORIGEN</label>
-                            <input type="text" name={"ORIGEN"} onChange={handleEventChange} />
+                            <label htmlFor="">LARGO CM</label>
+                            <input type="text" name={"LARGO CM"} onChange={handleEventChange} />
                         </div>
                         <div>
-                            <label htmlFor="">*DESTINO</label>
-                            <input type="text" name={"DESTINO"} onChange={handleEventChange} />
+                            <label htmlFor="">ANCHO CM</label>
+                            <input type="text" name={"ANCHO CM"} onChange={handleEventChange} />
+                        </div>
+                        <div>
+                            <label htmlFor="">ALTO CM</label>
+                            <input type="text" name={"ALTO CM"} onChange={handleEventChange} />
                         </div>
                         <div>
                             <label htmlFor="">*CANTIDAD</label>
                             <input type="text" name={"CANTIDAD"} onChange={handleEventChange} />
                         </div>
+                        <div>
+                            <label htmlFor="">KG VOLUMEN</label>
+                            <input type="text" name={"KG VOLUMEN"} onChange={handleEventChange} />
+                        </div>
+                        <div>
+                            <label htmlFor="">KG CARGABLE</label>
+                            <input type="text" name={"KG CARGABLE"} onChange={handleEventChange} />
+                        </div>
+
+                    </div>
+                    <br />
+                    <div className={style.subtitle}>DETALLES DEL SERVICIO</div>
+                    <br />
+                    <div className={style.items}>
+
 
                         <div>
-                            <label htmlFor="">*MONEDA</label>
+                            <label htmlFor="">ORIGEN</label>
+                            <input type="text" name={"ORIGEN"} onChange={handleEventChange} />
+                        </div>
+                        <div>
+                            <label htmlFor="">DESTINO</label>
+                            <input type="text" name={"DESTINO"} onChange={handleEventChange} />
+                        </div>
+                        <div>
+                            <label htmlFor="">AEROLINEA</label>
+                            <input type="text" name={"CANTIDAD"} onChange={handleEventChange} />
+                        </div>
+
+                        <div>
+                            <label htmlFor="">MONEDA</label>
                             <input type="text" name={"MONEDA"} onChange={handleEventChange} />
                         </div>
                     </div>
@@ -223,18 +209,18 @@ console.log(pdfData)
                     <br />
                     <div className={`${style.containerFirstItems} ${style.desktop}`}>
                         <span>DETALLE</span>
-                        <span>FLETE UNITARIO</span>
-                        <span>CANTIDAD</span>
+                        <span>FLETE KG</span>
+                        <span>W/M</span>
                         <span>FLETE TOTAL</span>
                     </div>
                     {
                         tarifa.map((i, index) => {
                             return (
                                 <div className={`${style.inputs}`} key={index}>
-                                    <input type="text" placeholder="DETALLE"/>
-                                    <input type="text" placeholder="FLETE UNITARIO"/>
-                                    <input type="text" placeholder="CANTIDAD" />
-                                    <input type="text" placeholder= "FLETE TOTAL"/>
+                                    <input type="text" placeholder="DETALLE" />
+                                    <input type="text" placeholder="FLETE KG" />
+                                    <input type="text" placeholder="W/M" />
+                                    <input type="text" placeholder="FLETE TOTAL" />
                                 </div>
                             )
                         })
@@ -253,10 +239,10 @@ console.log(pdfData)
                         otrosGastos.map((i, index) => {
                             return (
                                 <div className={`${style.inputs}`} key={index}>
-                                    <input type="text" placeholder="DETALLE"/>
-                                    <input type="text" placeholder="COSTO UNITARIO"/>
+                                    <input type="text" placeholder="DETALLE" />
+                                    <input type="text" placeholder="COSTO UNITARIO" />
                                     <input type="text" placeholder="CANTIDAD" />
-                                    <input type="text" placeholder= "COSTO TOTAL"/>
+                                    <input type="text" placeholder="COSTO TOTAL" />
                                 </div>
                             )
                         })
@@ -269,6 +255,18 @@ console.log(pdfData)
 
                     <br />
                     <div className={style.subtitle}>INCLUYE <span className={style.counterPluss} onClick={() => handlerCounterThree('pluss')}>+</span> <span className={style.counterLess} onClick={() => handlerCounterThree('less')}>-</span></div>
+                    {
+                        incluye.map((i, index) => {
+                            return (
+                                <div className={style.inputsAll} key={index}>
+                                    <input type="text" />
+                                </div>
+                            )
+                        })
+                    }
+                    <br />
+                    <br />
+                    <div className={style.subtitle}> NO INCLUYE <span className={style.counterPluss} onClick={() => handlerCounterThree('pluss')}>+</span> <span className={style.counterLess} onClick={() => handlerCounterThree('less')}>-</span></div>
                     {
                         incluye.map((i, index) => {
                             return (
