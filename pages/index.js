@@ -25,6 +25,7 @@ function Login() {
     }
 
     useEffect(() => {
+        console.log('hello world')
         onAuth(setUserProfile)
         if (user) router.replace('/Admin')
     }, [user, success, setUserProfile, router]);
