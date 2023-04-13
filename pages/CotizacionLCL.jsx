@@ -18,7 +18,7 @@ import Button from '../components/Button'
 function CotizacionTerrestre() {
     const { user, pdfData, setUserPdfData } = useUser()
     const router = useRouter()
-
+ 
     const [tarifa, setTarifa] = useState([""])
     const [otrosGastos, setOtrosGastos] = useState([""])
     const [incluye, setIncluye] = useState([""])
