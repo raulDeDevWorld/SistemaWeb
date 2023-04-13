@@ -1,23 +1,4 @@
 
-raulDeDevWorld
-/
-SistemaWeb3
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-SistemaWeb3/pages/CotizacionTerrestre.jsx
-
-Your Name DC
- History
- 1 contributor
-364 lines (330 sloc)  17.7 KB
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import { useReducer, useState } from 'react'
