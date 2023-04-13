@@ -193,183 +193,51 @@ function CotizacionTerrestre() {
                         </div>
                     </div>
                     <br />
-                    <div className={style.subtitle}>DESCRIPCION DE LA CARGA</div>
+                    <div className={style.subtitle}>DESCRIPCION DE SERVICIO</div>
                     <br />
                     <div className={style.items}>
                         <div>
-                            <label htmlFor="">MERCANCIA</label>
+                            <label htmlFor="">NÚMERO DE SERVICIO</label>
                             <input type="text" name={"MERCANCIA"} onChange={handleEventChange} />
                         </div>
+                        
                         <div>
-                            <label htmlFor="">*TIPO DE CARGA</label>
-                            <select name="TIPO DE CARGA" onChange={handleEventChange}>
-                                <option value="">Seleccione una opcion</option>
-                                <option value="GENERAL">GENERAL</option>
-                                <option value="PELIGROSA">PELIGROSA</option>
-                                <option value="ESPECIAL">ESPECIAL</option>
-                                <option value="REFRIGERADA">REFRIGERADA</option>
-                                <option value="PROYECTO">PROYECTO</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label htmlFor="">EMPAQUE</label>
-                            <select name="EMPAQUE" onChange={handleEventChange}>
-                                <option value="">Seleccione una opcion</option>
-                                <option value="20`OT">20`OT</option>
-                                <option value="20`FR">20`FR</option>
-                                <option value="20`HARD TOP">20`HARD TOP</option>
-                                <option value="20`OPEN SIDE">20`OPEN SIDE</option>
-                                <option value="20`PLATAFORMA">20`PLATAFORMA</option>
-                                <option value="20`RF">20`RF</option>
-                                <option value="40`STD">40`STD</option>
-                                <option value="40`HQ">40`HQ</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label htmlFor="">*VOLUMEN M3</label>
+                            <label htmlFor="">MONEDA</label>
                             <input type="text" name={"VOLUMEN M3"} onChange={handleEventChange} />
                         </div>
                         <div>
-                            <label htmlFor="">*PESO TN</label>
+                            <label htmlFor="">MERCANCÍA</label>
                             <input type="text" name={"PESO TN"} onChange={handleEventChange} />
                         </div>
                         <div>
-                            <label htmlFor="">*CANTIDAD</label>
+                            <label htmlFor="">TIPO DE CAMBIO</label>
                             <input type="text" name={"CANTIDAD"} onChange={handleEventChange} />
                         </div>
                         <div>
-                            <label htmlFor="">INCOTERM</label>
-                            <select name="INCOTERM" onChange={handleEventChange}>
-                                <option value="">Seleccione una opcion</option>
-                                <option value="EXW">EXW</option>
-                                <option value="FCA">FCA</option>
-                                <option value="CPT">CPT</option>
-                                <option value="CIP">CIP</option>
-                                <option value="DAP">DAP</option>
-                                <option value="DPU">DPU</option>
-                                <option value="DDP">DDP</option>
-                                <option value="CIF">CIF</option>
-                            </select>
+                            <label htmlFor="">TIPO DE CARGA</label>
+                            <input type="text" name={"MERCANCIA"} onChange={handleEventChange} />
+                        </div>
+                        
+                        <div>
+                            <label htmlFor="">CONDICIONES DE PAGO</label>
+                            <input type="text" name={"VOLUMEN M3"} onChange={handleEventChange} />
                         </div>
                         <div>
-                            <label htmlFor="">MODALIDAD</label>
-                            <select name="MODALIDAD" onChange={handleEventChange}>
-                                <option value="">Seleccione una opcion</option>
-                                <option value="FCL">FCL</option>
-                                <option value="LTL">LTL</option>
-                                <option value="CARGA SUELTA">CARGA SUELTA</option>
-                                <option value="DESCONSOLIDADO">DESCONSOLIDADO</option>
-                            </select>
-                        </div>
-                    </div>
-                    <br />
-                    <div className={style.subtitle}>DETALLES DEL SERVICIO</div>
-                    <br />
-                    <div className={style.items}>
-                        <div>
-                            <label htmlFor="">*SERVICIO</label>
-                            <select name="SERVICIO" onChange={handleEventChange}>
-                                <option value="">Seleccione una opcion</option>
-                                <option value="NACIONAL">NACIONAL</option>
-                                <option value="INTERNACIONAL">INTERNACIONAL</option>
-                                <option value="URBANO">URBANO</option>
-                            </select>
+                            <label htmlFor="">TIPO DE SERVICIO</label>
+                            <input type="text" name={"PESO TN"} onChange={handleEventChange} />
                         </div>
                         <div>
-                            <label htmlFor="">*TIPO DE UNIDAD</label>
-                            <select name="TIPO DE UNIDAD" onChange={handleEventChange}>
-                                <option value="">Seleccione una opcion</option>
-                                <option value="CAMIONETA">CAMIONETA</option>
-                                <option value="CAMION">CAMION</option>
-                                <option value="TRAILER">TRAILER</option>
-                                <option value="LOWBOY">LOWBOY</option>
-                                <option value="CAMION CON ACOPLE">CAMION CON ACOPLE</option>
-                                <option value="FURGON CARGA SECA">FURGON CARGA SECA</option>
-                                <option value="FURGON CARGA REFRIGERADA">FURGON CARGA REFRIGERADA</option>
-                                <option value="PORTA CONTENEDORES">PORTA CONTENEDORES</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label htmlFor="">*ORIGEN</label>
-                            <input type="text" name={"ORIGEN"} onChange={handleEventChange} />
-                        </div>
-                        <div>
-                            <label htmlFor="">*DESTINO</label>
-                            <input type="text" name={"DESTINO"} onChange={handleEventChange} />
-                        </div>
-                        <div>
-                            <label htmlFor="">*CANTIDAD</label>
+                            <label htmlFor="">CONTRATO/COTIZACIÓN</label>
                             <input type="text" name={"CANTIDAD"} onChange={handleEventChange} />
                         </div>
-
-                        <div>
-                            <label htmlFor="">*MONEDA</label>
-                            <input type="text" name={"MONEDA"} onChange={handleEventChange} />
-                        </div>
+                        
                     </div>
                     <br />
-                    <div className={style.subtitle}>TARIFA <span className={style.counterPluss} onClick={() => handlerCounter('pluss')}>+</span> <span className={style.counterLess} onClick={() => handlerCounter('less')}>-</span></div>
-                    <br />
-                    <div className={`${style.containerFirstItems} ${style.desktop}`}>
-                        <span>DETALLE</span>
-                        <span>FLETE UNITARIO</span>
-                        <span>CANTIDAD</span>
-                        <span>FLETE TOTAL</span>
-                    </div>
-                    {
-                        tarifa.map((i, index) => {
-                            return (
 
-                                <div className={`${style.inputs}`} key={index}>
-                                    <input type="text" placeholder="DETALLE" />
-                                    <input type="number" name={`FLETEUNITARIO${index}`} onChange={(e) => handlerCalc(e, index)} defaultValue={calc[`FLETEUNITARIO${index}`] && calc[`FLETEUNITARIO${index}`]} placeholder="FLETE UNITARIO" />
-                                    <input type="number" name={`CANTIDADFLETE${index}`} onChange={(e) => handlerCalc(e, index)} defaultValue={calc[`CANTIDADFLETE${index}`] && calc[`CANTIDADFLETE${index}`]} placeholder="CANTIDAD" />
-                                    <input type="number" defaultValue={calc[`PRODUCTFLETE${index}`] && calc[`PRODUCTFLETE${index}`]} placeholder="FLETE TOTAL" />
-                                </div>
+                    
 
-                            )
-                        })
-                    }
+  
 
-                    <br />
-                    <div className={style.subtitle}>OTROS GASTOS <span className={style.counterPluss} onClick={() => handlerCounterTwo('pluss')}>+</span> <span className={style.counterLess} onClick={() => handlerCounterTwo('less')}>-</span></div>
-                    <br />
-                    <div className={`${style.containerFirstItems} ${style.desktop}`}>
-                        <span>DETALLE</span>
-                        <span>COSTO UNITARIO</span>
-                        <span>CANTIDAD</span>
-                        <span>COSTO TOTAL</span>
-                    </div>
-                    {
-                        otrosGastos.map((i, index) => {
-                            return (
-                                <div className={`${style.inputs}`} key={index}>
-                                    <input type="text" placeholder="DETALLE" />
-                                    <input type="number" name={`COSTOUNITARIO${index}`} onChange={(e) => handlerCalc(e, index)} defaultValue={calc[`COSTOUNITARIO${index}`] && calc[`COSTOUNITARIO${index}`]} placeholder="COSTO UNITARIO" />
-                                    <input type="number" name={`CANTIDAD${index}`} onChange={(e) => handlerCalc(e, index)} defaultValue={calc[`CANTIDAD${index}`] && calc[`CANTIDAD${index}`]} placeholder="CANTIDAD" />
-                                    <input type="number" defaultValue={calc[`PRODUCT${index}`] && calc[`PRODUCT${index}`]} placeholder="COSTO TOTAL" />
-                                </div>
-                            )
-                        })
-                    }
-                    <br />
-
-                    <div className={style.inputsSemi}>
-                        <label htmlFor="">Costo Total</label><input type="text" defaultValue={calc.PRODUCTOTOTAL  && calc.PRODUCTOFLETETOTAL ? calc.PRODUCTOTOTAL + calc.PRODUCTOFLETETOTAL : (calc.PRODUCTOTOTAL ? calc.PRODUCTOTOTAL : (calc.PRODUCTOFLETETOTAL && calc.PRODUCTOFLETETOTAL) )} />
-                    </div>
-
-                    <br />
-                    <div className={style.subtitle}>INCLUYE <span className={style.counterPluss} onClick={() => handlerCounterThree('pluss')}>+</span> <span className={style.counterLess} onClick={() => handlerCounterThree('less')}>-</span></div>
-                    {
-                        incluye.map((i, index) => {
-                            return (
-                                <div className={style.inputsAll} key={index}>
-                                    <input type="text" />
-                                </div>
-                            )
-                        })
-                    }
-                    <br />
                 </form>
             </div>
             <button className={style.downloadPDF} onClick={handlerPdfButton}>
