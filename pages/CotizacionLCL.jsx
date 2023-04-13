@@ -230,4 +230,4 @@ function CotizacionTerrestre() {
     )
 }
 
-export default WithAuth(CotizacionTerrestre)
+export default WithAuth(CotizacionTerrestre) 
